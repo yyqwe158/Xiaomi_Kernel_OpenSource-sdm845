@@ -747,12 +747,7 @@ static int iface_stat_fmt_proc_show(struct seq_file *m, void *v)
 
 	iface_entry = list_entry(v, struct iface_stat, list);
 
-	if (iface_entry->active) {
-		stats = dev_get_stats(iface_entry->net_dev,
-				      &dev_stats);
-	} else {
-		stats = &no_dev_stats;
-	}
+	stats = &no_dev_stats;
 	/*
 	 * If the meaning of the data changes, then update the fmtX
 	 * string.
